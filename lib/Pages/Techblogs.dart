@@ -1,20 +1,18 @@
 import 'package:flutter/material.dart';
-import 'package:parimza/Pages/Help.dart';
 import 'package:parimza/common_widgets/Techmenu.dart';
 
-class SettingsPage extends StatefulWidget {
-  @override
-  _SettingsPageState createState() => _SettingsPageState();
-}
-
-class _SettingsPageState extends State<SettingsPage> {
+class TechBlog extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       drawer: TechDrawer(),
       appBar: AppBar(
-        title: Text('Home Page'),
+        title: Text(
+          'Tech Blogs',
+          style: TextStyle(fontSize: 18.0),
+        ),
         centerTitle: true,
+        backgroundColor: Colors.red,
         actions: <Widget>[
           //FlatButton(
           // child: Text(

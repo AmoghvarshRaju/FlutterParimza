@@ -1,15 +1,20 @@
 import 'package:flutter/material.dart';
+import 'package:parimza/Pages/PolitacalPage.dart';
+import 'package:parimza/Pages/Profile.dart';
+import 'package:parimza/Pages/Settings.dart';
+import 'package:parimza/Pages/Techblogs.dart';
+import 'package:parimza/Pages/Technews.dart';
 
 class NavDrawer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Drawer(
+    return new Drawer(
       child: ListView(
         padding: EdgeInsets.zero,
         children: <Widget>[
           DrawerHeader(
             child: Text(
-              'Side menu',
+              'Menu',
               style: TextStyle(color: Colors.white, fontSize: 25),
             ),
             decoration: BoxDecoration(
@@ -20,70 +25,85 @@ class NavDrawer extends StatelessWidget {
               ),
             ),
           ),
-          Container(
-            padding: EdgeInsets.all(15),
-            child: Row(
-              children: <Widget>[
-                Icon(
-                  Icons.group,
-                  size: 40,
-                ),
-                SizedBox(width: 20.0),
-                Text('Political'),
-              ],
+          ListTile(
+            leading: Icon(
+              Icons.people,
+              size: 40.0,
+              color: Colors.black,
             ),
+            title: Text('Political'),
+            onTap: () {
+              Navigator.push(
+                context,
+                new MaterialPageRoute(
+                  builder: (context) => new PoliticalPage(),
+                ),
+              );
+            },
           ),
-          Container(
-            padding: EdgeInsets.all(15),
-            child: Row(
-              children: <Widget>[
-                Icon(
-                  Icons.verified_user,
-                  size: 40,
-                ),
-                SizedBox(width: 20.0),
-                Text('Profile'),
-              ],
+          ListTile(
+            leading: Icon(
+              Icons.verified_user,
+              size: 40.0,
+              color: Colors.black,
             ),
+            title: Text('Profile'),
+            onTap: () {
+              Navigator.push(
+                context,
+                new MaterialPageRoute(
+                  builder: (context) => new ProfilePage(),
+                ),
+              );
+            },
           ),
-          Container(
-            padding: EdgeInsets.all(15),
-            child: Row(
-              children: <Widget>[
-                Icon(
-                  Icons.android,
-                  size: 40,
-                ),
-                SizedBox(width: 20.0),
-                Text('Tech News'),
-              ],
+          ListTile(
+            leading: Icon(
+              Icons.memory,
+              size: 40.0,
+              color: Colors.black,
             ),
+            title: Text('TechBlogs'),
+            onTap: () {
+              Navigator.push(
+                context,
+                new MaterialPageRoute(
+                  builder: (context) => new TechBlog(),
+                ),
+              );
+            },
           ),
-          Container(
-            padding: EdgeInsets.all(15),
-            child: Row(
-              children: <Widget>[
-                Icon(
-                  Icons.memory,
-                  size: 40,
-                ),
-                SizedBox(width: 20.0),
-                Text('Tech Blogs'),
-              ],
+          ListTile(
+            leading: Icon(
+              Icons.android,
+              size: 40.0,
+              color: Colors.black,
             ),
+            title: Text('TechNews'),
+            onTap: () {
+              Navigator.push(
+                context,
+                new MaterialPageRoute(
+                  builder: (context) => new TechNews(),
+                ),
+              );
+            },
           ),
-          Container(
-            padding: EdgeInsets.all(15),
-            child: Row(
-              children: <Widget>[
-                Icon(
-                  Icons.settings,
-                  size: 40,
-                ),
-                SizedBox(width: 20.0),
-                Text('Settings'),
-              ],
+          ListTile(
+            leading: Icon(
+              Icons.settings,
+              size: 40.0,
+              color: Colors.black,
             ),
+            title: Text('Settings'),
+            onTap: () {
+              Navigator.push(
+                context,
+                new MaterialPageRoute(
+                  builder: (context) => new SettingsPage(),
+                ),
+              );
+            },
           ),
         ],
       ),

@@ -1,12 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:parimza/common_widgets/menu_bar.dart';
 
-class ProfilePage extends StatefulWidget {
-  @override
-  _ProfilePageState createState() => _ProfilePageState();
-}
-
-class _ProfilePageState extends State<ProfilePage> {
+class ProfilePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -27,7 +22,7 @@ class _ProfilePageState extends State<ProfilePage> {
               children: <Widget>[
                 CircleAvatar(
                   radius: 80,
-                  backgroundImage: AssetImage('images/google.png'),
+                  backgroundImage: AssetImage('images/google-logo.png'),
                 ),
               ],
             ),

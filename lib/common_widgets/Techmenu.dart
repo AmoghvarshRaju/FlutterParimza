@@ -1,15 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:parimza/Pages/Techblogs.dart';
 
 class TechDrawer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Drawer(
+    return new Drawer(
       child: ListView(
         padding: EdgeInsets.zero,
         children: <Widget>[
           DrawerHeader(
             child: Text(
-              'Side menu',
+              'Menu',
               style: TextStyle(color: Colors.white, fontSize: 25),
             ),
             decoration: BoxDecoration(
@@ -20,70 +21,66 @@ class TechDrawer extends StatelessWidget {
               ),
             ),
           ),
-          Container(
-            padding: EdgeInsets.all(15),
-            child: Row(
-              children: <Widget>[
-                Icon(
-                  Icons.group,
-                  size: 40,
-                ),
-                SizedBox(width: 20.0),
-                Text('Political'),
-              ],
+          ListTile(
+            leading: Icon(
+              Icons.tablet,
+              size: 40.0,
+              color: Colors.black,
             ),
+            title: Text('TechBlogs'),
+            onTap: () {
+              Navigator.push(
+                context,
+                new MaterialPageRoute(
+                  builder: (context) => new TechBlog(),
+                ),
+              );
+            },
           ),
-          Container(
-            padding: EdgeInsets.all(15),
-            child: Row(
-              children: <Widget>[
-                Icon(
-                  Icons.verified_user,
-                  size: 40,
-                ),
-                SizedBox(width: 20.0),
-                Text('Profile'),
-              ],
+          ListTile(
+            leading: Icon(
+              Icons.developer_mode,
+              size: 40.0,
+              color: Colors.black,
             ),
+            title: Text('Programming'),
+            onTap: () {},
           ),
-          Container(
-            padding: EdgeInsets.all(15),
-            child: Row(
-              children: <Widget>[
-                Icon(
-                  Icons.android,
-                  size: 40,
-                ),
-                SizedBox(width: 20.0),
-                Text('Tech News'),
-              ],
+          ListTile(
+            leading: Icon(
+              Icons.memory,
+              size: 40.0,
+              color: Colors.black,
             ),
+            title: Text('AI'),
+            onTap: () {},
           ),
-          Container(
-            padding: EdgeInsets.all(15),
-            child: Row(
-              children: <Widget>[
-                Icon(
-                  Icons.memory,
-                  size: 40,
-                ),
-                SizedBox(width: 20.0),
-                Text('Tech Blogs'),
-              ],
+          ListTile(
+            leading: Icon(
+              Icons.data_usage,
+              size: 40.0,
+              color: Colors.black,
             ),
+            title: Text('DataScinces'),
+            onTap: () {},
           ),
-          Container(
-            padding: EdgeInsets.all(15),
-            child: Row(
-              children: <Widget>[
-                Icon(
-                  Icons.settings,
-                  size: 40,
-                ),
-                SizedBox(width: 20.0),
-                Text('Settings'),
-              ],
+          ListTile(
+            leading: Icon(
+              Icons.multiline_chart,
+              size: 40.0,
+              color: Colors.black,
             ),
+            title: Text('BlockChain'),
+            onTap: () {},
+          ),
+          ListTile(
+            leading: Icon(
+              Icons.visibility,
+              size: 40.0,
+              color: Colors.black,
+            ),
+            title: Text('VR + AR'),
+            onTap: () {},
           ),
         ],
       ),

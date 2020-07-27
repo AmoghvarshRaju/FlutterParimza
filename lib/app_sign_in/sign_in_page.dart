@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:parimza/app_sign_in/sign_in_button.dart';
+//import 'package:parimza/app_sign_in/sign_in_button.dart';
 import 'package:parimza/app_sign_in/social_sign_in_button.dart';
 import 'package:parimza/services/auth.dart';
 
@@ -10,13 +10,13 @@ class SignInPage extends StatelessWidget {
 
   final AuthBase auth;
 
-  Future<void> _signInAnonymously() async {
-    try {
-      await auth.signInAnonymously();
-    } catch (e) {
-      print(e.toString());
-    }
-  }
+  // Future<void> _signInAnonymously() async {
+  //  try {
+  //    await auth.signInAnonymously();
+  //  } catch (e) {
+  //    print(e.toString());
+  //  }
+  //}
 
   Future<void> _signInWithGoogle() async {
     try {
@@ -41,7 +41,7 @@ class SignInPage extends StatelessWidget {
 
   Widget _buildContent() {
     return Padding(
-      padding: EdgeInsets.all(16.0),
+      padding: EdgeInsets.all(20.0),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -52,6 +52,7 @@ class SignInPage extends StatelessWidget {
             style: TextStyle(
               fontSize: 32.0,
               fontWeight: FontWeight.w600,
+              color: Colors.black,
             ),
           ),
           SizedBox(height: 48.0),
@@ -62,32 +63,32 @@ class SignInPage extends StatelessWidget {
             color: Colors.white,
             onPressed: _signInWithGoogle,
           ),
-          SizedBox(height: 8.0),
-          Text(
-            'or',
-            style: TextStyle(
-                fontSize: 14.0,
-                color: Colors.black87,
-                fontStyle: FontStyle.italic),
-            textAlign: TextAlign.center,
-          ),
-          SizedBox(height: 8.0),
-          SignInButton(
-            text: 'Go anonymous',
-            textColor: Colors.black,
-            color: Colors.lime[300],
-            onPressed: _signInAnonymously,
-          ),
-          SizedBox(height: 1.0),
-          Text(
-            'At your own risk',
-            style: TextStyle(
-              fontSize: 20.0,
-              color: Colors.red,
-              fontStyle: FontStyle.italic,
-            ),
-            textAlign: TextAlign.center,
-          ),
+          // SizedBox(height: 8.0),
+          // Text(
+          // 'or',
+          // style: TextStyle(
+          //      fontSize: 14.0,
+          //      color: Colors.black87,
+          //      fontStyle: FontStyle.italic),
+          //  textAlign: TextAlign.center,
+          //  ),
+          //  SizedBox(height: 8.0),
+          //  SignInButton(
+          //   text: 'Go anonymous',
+          //   textColor: Colors.black,
+          //   color: Colors.lime[300],
+          //   onPressed: _signInAnonymously,
+          // ),
+          // SizedBox(height: 1.0),
+          // Text(
+          //   'At your own risk',
+          //   style: TextStyle(
+          //     fontSize: 20.0,
+          //     color: Colors.red,
+          //     fontStyle: FontStyle.italic,
+          //   ),
+          //   textAlign: TextAlign.center,
+          // ),
         ],
       ),
     );
